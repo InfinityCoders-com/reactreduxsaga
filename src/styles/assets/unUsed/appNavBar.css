@@ -1,0 +1,12 @@
+
+@media only screen and (max-width : 992px) and (min-width : 480px) {
+   /* Small desktop / ipad view: 3 tiles */
+   .navbarIcon { display: block; }
+}
+@media only screen and (max-width : 1290px) and (min-width : 992px) {
+  
+   .navbarIcon { display: none; }
+}
+@media only screen and (max-width : 3000px) and (min-width : 1290px){
+   .navbarIcon { display: none; }
+}

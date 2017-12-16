@@ -1,0 +1,19 @@
+.dialog-add-role {
+  width: 40% !important;
+  max-width: none !important;
+  transition: .2s;
+}
+
+@media (max-width: 768px) {
+  .dialog-add-role {
+    width: 60% !important;
+    transition: .2s;
+  }
+}
+
+@media (max-width: 540px) {
+  .dialog-add-role {
+    width: 85% !important;
+    transition: .2s;
+  }
+}

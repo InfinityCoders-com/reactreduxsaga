@@ -1,0 +1,159 @@
+@import "assets/font.scss";
+@import "assets/scss/app.scss";
+@import "assets/fullcalendar.theme.scss";
+@import "generic/index";
+@import "auth/index";
+@import "template/index";
+@import "manageRoles/manageRoles/index";
+@import "myDocuments/index";
+@import "myProfile/index";
+@import "policyDocuments/index";
+@import "inventory/index";
+@import "leave/index";
+@import "team/index";
+@import "manageUsers/index";
+@import "manageWorkingHours/index";
+@import "salary/index";
+@import "attendance/index";
+
+
+
+input[type=checkbox] {
+  /* All browsers except webkit*/
+  transform: scale(2);
+
+  /* Webkit browsers*/
+  -webkit-transform: scale(2);
+}
+.m-t-0{
+  margin-top: 0;
+}
+.m-b-0{
+  margin-bottom: 0;
+}
+.m-l-0{
+  margin-left: 0;
+}
+.m-r-0{
+  margin-right: 0;
+}
+.m-y-20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+a.primary:hover {
+  background-color: #0bb69f;
+ }
+
+a.text-primary:hover {
+  color: #0bb69f;
+ }
+
+.text-primary,
+.text-primary-hover a:hover {
+  color: #0cc2aa !important;
+ }
+
+a.warn:hover {
+  background-color: #efb700;
+ }
+
+a.text-warn:hover {
+  color: #efb700;
+ }
+
+.text-warn,
+.text-warn-hover a:hover {
+  color: #fcc100 !important;
+ }
+
+a.accent:hover {
+  background-color: #a180da;
+ }
+
+a.text-accent:hover {
+  color: #a180da;
+ }
+
+.text-accent,
+.text-accent-hover a:hover {
+  color: #a88add !important;
+ }
+
+a.success:hover {
+  background-color: #63c381;
+ }
+
+a.text-success:hover {
+  color: #63c381;
+ }
+
+.text-success,
+.text-success-hover a:hover {
+  color: #6cc788 !important;
+ }
+
+a.info:hover {
+  background-color: #5b7dff;
+ }
+
+a.text-info:hover {
+  color: #5b7dff;
+ }
+
+.text-info,
+.text-info-hover a:hover {
+  color: #6887ff !important;
+ }
+
+a.warning:hover {
+  background-color: #f66e90;
+ }
+
+a.text-warning:hover {
+  color: #f66e90;
+ }
+
+.text-warning,
+.text-warning-hover a:hover {
+  color: #f77a99 !important;
+ }
+
+a.danger:hover {
+  background-color: #f3384a;
+ }
+
+a.text-danger:hover {
+  color: #f3384a;
+ }
+
+.text-danger,
+.text-danger-hover a:hover {
+  color: #f44455 !important;
+ }
+
+a.dark:hover {
+  background-color: #293846;
+ }
+
+a.text-dark:hover {
+  color: #293846;
+ }
+
+.text-dark,
+.text-dark-hover a:hover {
+  color: #2e3e4e !important;
+ }
+
+a.blue:hover {
+  background-color: #1590f2;
+ }
+
+a.text-blue:hover {
+  color: #1590f2;
+ }
+
+.text-blue,
+.text-blue-hover a:hover {
+  color: #2196f3 !important;
+ }

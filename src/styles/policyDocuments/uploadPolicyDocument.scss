@@ -1,0 +1,30 @@
+.doc-subtitle {
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+ }
+.doc-opacity {
+  opacity: 0.56;
+ }
+.upload-doc-paper {
+  width: auto
+ }
+
+
+ @media (max-width: 540px) {
+   .doc-subtitle {
+     width: auto;
+     font-size: 9px;
+   }
+ }
+ @media (min-width: 769px) and (max-width: 992px) {
+  .doc-subtitle{
+     width: auto;
+     font-size: 9px;
+   }
+  }
+ @media (min-width: 1200px) {
+   .doc-subtitle{
+     font-size: 12px;
+     width: auto;
+   }
+  }

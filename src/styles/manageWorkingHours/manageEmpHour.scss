@@ -1,0 +1,14 @@
+.hour-overflow {
+  overflow-y: scroll;
+  max-height: 500px;
+}
+.max-w-200{
+  max-width: 200px;
+  white-space:normal;
+}
+@media screen and (max-width: 767px) {
+  .max-w-200{
+    font-size: 12px;
+    white-space:normal;
+  }
+}

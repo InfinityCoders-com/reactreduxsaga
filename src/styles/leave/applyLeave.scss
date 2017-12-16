@@ -1,0 +1,13 @@
+.calendar {
+  min-width: 280px;
+}
+
+.apply-leave-btn{
+  width: 80%;
+}
+
+@media (max-width: 580px) {
+  .calendar {
+    width: 100%;
+  }
+}

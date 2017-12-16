@@ -1,0 +1,7 @@
+.fixed-height {
+  max-height: 76vh;
+  overflow: hidden;
+}
+.fixed-height:hover {
+  overflow-y: scroll;
+}

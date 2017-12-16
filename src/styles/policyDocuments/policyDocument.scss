@@ -1,0 +1,43 @@
+.is-read-document {
+  color: $grey-500;
+  font-size: 18px;
+  border-left: 5px solid $green-500;
+ }
+.is-not-read-document {
+  font-size: 18px;
+  border-left: 5px solid $red-00;
+ }
+.policyDocumentsList {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  background-color: $white;
+  border-radius: 2px;
+  padding: .75rem !important;
+  h5{
+    margin: 0.25rem 0 0 0;
+  }
+  a{
+    font-size: 70%;
+    line-height: 10px;
+    word-wrap: break-word;
+  }
+}
+.paddingResponsive {
+  padding: 0 3rem;
+  transition: .2s;
+ }
+.icon-button {
+  width: 4%;
+ }
+@media (max-width: 992px) and (min-width: 540px) {
+  .paddingResponsive{
+    padding: 0 2rem;
+    transition: .2s;
+  }
+}
+
+@media (max-width: 540px) {
+  .paddingResponsive{
+    padding: 0 1rem;
+    transition: .2s;
+  }
+}

@@ -1,0 +1,14 @@
+.auth-form{
+  margin: 1rem !important;
+}
+
+@media (max-width: 767px) {
+  .auth-form{
+    margin: .5rem 1rem !important;
+  }
+  .md-form-group{
+  	padding: 14px 0 20px 0;
+  	position: relative;
+    transition: 1s;
+  }
+}

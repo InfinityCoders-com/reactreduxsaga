@@ -1,0 +1,24 @@
+#uploadMyDoc{
+  transition: .2s;
+}
+.auto-width-center {
+  left: 50%;
+  -ms-transform: translate(-50%) !important;
+  -webkit-transform: translate(-50%) !important;
+  transform: translate(-50%) !important;
+}
+.declaration {
+  display: inline-flex;
+  width: 90%;
+  margin-left: 1vw;
+}
+.vertical-middle {
+  margin: 0 !important;
+  vertical-align: middle;
+}
+@media (max-width: 540px) {
+  option {
+    font-size: 12px;
+    padding: 10px !important;
+  }
+}

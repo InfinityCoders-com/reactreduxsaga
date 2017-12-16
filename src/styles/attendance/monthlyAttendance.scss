@@ -1,0 +1,15 @@
+.day-color-referance{
+  min-width: 55px;
+}
+.calendar-day {
+ width: calc(100% / 7);
+ min-width: 100px;
+ float: left;
+ min-height: 150px;
+}
+
+@media (max-width: 580px) {
+  .time-summary {
+    width: 100%;
+  }
+}

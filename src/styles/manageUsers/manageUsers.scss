@@ -1,0 +1,137 @@
+.emp-action-btn {
+  .add-new-emp{
+    width: 25%;
+    float: left;
+  }
+  .disable-user {
+    width: 25%;
+    float: right;
+  }
+  .slack-notification {
+    width: 50%;
+    float: left;
+    margin-top: 7px;
+    .btn-wrapper{
+      width: 234px;
+      display: block;
+      margin: 0 auto;
+      padding: 4px;
+    }
+    label, span {
+      float: left;
+    }
+    span{
+      margin-left: 10px;
+    }
+  }
+  .disable-user {
+    button{
+      float: right;
+    }
+  }
+}
+.padding-x-5 {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+.profile-input{
+  @extend .padding-x-5;
+}
+.send-slack-msg-checkbox {
+  margin-left: 20px !important;
+  position: absolute;
+  cursor: pointer;
+}
+.add-new-emp-dialog {
+  width: 70%;
+  max-width: none;
+  .input-wrapper {
+    padding: 5px;
+  }
+}
+.upload-doc-dialog {
+  width: 75%;
+  max-width: none;
+}
+.employee-life-cycle {
+  .emp-life-cycle {
+    cursor: pointer;
+    padding: 10px 0;
+    .expand-icon {
+      position: absolute;
+      right: 0;
+      top: 10px;
+      padding: 5px;
+    }
+  }
+  .steps {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 60px;
+    position: relative;
+    .step-toggle-button {
+      position: absolute;
+      display: block;
+      float: right;
+      right: 0;
+      top: 4px;
+    }
+  }
+  .steps:hover {
+    background: rgba(204, 204, 204, 0.17);
+    border-radius: 5px;
+  }
+  .life-cycle-header {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .life-cycle-category {
+    padding-bottom: 10px;
+  }
+}
+@media (max-width: 580px) {
+  .emp-action-btn {
+    .add-new-emp{
+      width: 50%;
+      float: left;
+    }
+    .disable-user {
+      width: 50%;
+      float: right;
+    }
+    .slack-notification {
+      width: 100%;
+      float: left;
+    }
+  }
+  .profile-input {
+    width: 100%;
+  }
+  .upload-doc-dialog {
+    .title {
+      font-size: 15px !important;
+      padding: 15px !important;
+    }
+    .body {
+      font-size: 13px !important;
+    }
+  }
+  .add-new-emp-dialog {
+    .title {
+      font-size: 15px !important;
+      padding: 10px !important;
+    }
+    .body {
+      font-size: 13px !important;
+      padding: 0 10px 10px !important;
+    }
+    .input-wrapper {
+      width: 100%;
+    }
+  }
+  .employee-life-cycle {
+    .life-cycle-category {
+      width: 100%;
+    }
+  }
+}

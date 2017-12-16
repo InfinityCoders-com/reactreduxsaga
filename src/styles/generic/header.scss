@@ -1,0 +1,29 @@
+.app-header {
+  .user-list-icon {
+    // display: none;
+    float: right;
+    margin-top: 9px;
+    // padding: 6px 23px;
+    cursor: pointer;
+    font-size: 27px;
+    color: rgb(39, 39, 71);
+  }
+  .user-list-icon:hover {
+    background: rgba(220, 220, 220, 0.45);
+    transition: background 1s;
+  }
+}
+.nav-dashboard {
+ background-color: #284665 ;
+ width: 100%;
+ color: #fff;
+ text-align: center;
+
+ .p-dashboard {
+   display: inline-block;
+   float: right;
+   padding-right: 2em;
+   padding-top: 1.2em;
+   cursor: pointer;
+ }
+}

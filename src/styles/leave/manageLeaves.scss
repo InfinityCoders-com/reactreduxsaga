@@ -1,0 +1,33 @@
+.leaves-tab {
+  cursor: pointer;
+  .top-bar {
+    height: 3px;
+  }
+  .active-tab {
+    background: #008000;
+    border-radius: 10px 10px 0px 0px;
+  }
+}
+
+.leave-list-collapse {
+  cursor: pointer;
+  padding: 10px 0;
+  .expand-icon {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    padding: 5px;
+  }
+}
+.scroll-leave-list {
+  display: block;
+  max-height: 205vh;
+  overflow:  scroll;
+}
+@media (max-width: 768px) {
+  .leaves-tab {
+    padding-top: 7px;
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+  }
+}

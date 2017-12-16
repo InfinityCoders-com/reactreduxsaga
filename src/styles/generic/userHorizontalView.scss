@@ -1,0 +1,16 @@
+.padding-responsive{
+  padding: 3rem 2rem !important;
+}
+
+@media (max-width: 992px) {
+  .padding-responsive{
+    padding: 2rem 1rem !important;
+  }
+}
+
+@media (max-width: 540px) {
+  .padding-responsive{
+    padding: .5rem !important;
+    word-wrap: break-word;
+  }
+}
