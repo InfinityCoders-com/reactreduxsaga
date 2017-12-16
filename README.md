@@ -1,12 +1,12 @@
-## Excellence HR System (```v 2.0.0```)
+## ReactReduxSaga Starter Kit (```v 2.0.0```)
 Upgraded...
 
 ## Getting Started
 
 
 ```bash
-$ git clone https://github.com/reactexcel/ReactReduxHR.git
-$ cd ReactReduxHR
+$ git clone https://github.com/InfinityCoders-com/reactreduxsaga.git
+$ cd ReactReduxSaga
 $ npm install                   # Install project dependencies
 $ npm run start:dev                     # Compile and launch
 ```

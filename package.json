@@ -1,7 +1,7 @@
 {
-  "name": "excellence-hr-system",
+  "name": "reactreduxsaga-starter-kit",
   "version": "2.0.0",
-  "description": "Excellence HR system",
+  "description": "ReactReduxSaga",
   "main": "index.js",
   "engines": {
     "node": ">=4.2.0",
@@ -43,7 +43,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactexcel/ReactReduxHR.git"
+    "url": "git+https://github.com/InfinityCoders-com/reactreduxsaga.git"
   },
   "author": "",
   "license": "MIT",
