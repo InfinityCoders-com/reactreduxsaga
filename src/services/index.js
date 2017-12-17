@@ -82,6 +82,10 @@ export function fireAjax (method, url, data, api) {
     delete (data.action);
     headers.body = JSON.stringify(data);
     URL = CONFIG.expressApiUrl;
+  } else if (data.action === 'get_all_search_result') {
+    delete (data.action);
+    headers.body = JSON.stringify(data);
+    URL = CONFIG.other;
   }
 
   return fetch(URL, headers).then((response) => {

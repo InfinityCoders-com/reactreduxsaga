@@ -9,6 +9,7 @@ import {getUserDaySummary, updateUserDaySummary, empUpdateDaySummary} from 'appR
 import {getUsersList} from 'appRedux/generic/actions/usersList';
 import {fetchUserPolicyDocument, submitPolicyDocs, updateReadStatus, fetchPolicyDocument} from 'appRedux/policyDocuments/actions/index';
 import {getTeamList, saveTeam, getTeam} from 'appRedux/team/actions/teamList';
+import {getAllSearchResult} from 'appRedux/search/actions/search';
 
 export function* watchActions () {
   yield takeLatest(constants.USER_LOGIN_REQUEST, loginRequest);
@@ -44,6 +45,7 @@ export function* watchActions () {
   yield takeLatest(constants.REQUEST_TEAM_LIST, getTeamList);
   yield takeLatest(constants.REQUEST_ADD_TEAM, saveTeam);
   yield takeLatest(constants.REQUEST_GET_TEAM, getTeam);
+  yield takeLatest(constants.REQUEST_ALL_SEARCH_RESULT, getAllSearchResult);
 }
 
 export default function* rootSaga () {

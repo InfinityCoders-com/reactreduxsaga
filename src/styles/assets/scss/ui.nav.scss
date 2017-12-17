@@ -73,7 +73,7 @@
 
 .nav-text{
 	display: block;
-	line-height: 1.125rem;
+	line-height: 1.10rem;
 	padding: ($aside-nav-height - 1.125)/2 0;
 	.nav > li > a & {
 		font-weight: 500;
@@ -132,7 +132,7 @@
 	margin-left: 1rem;
 	font-style: normal;
 	z-index: 1;
-	
+
 	.navbar & {
 		margin-left: 0.5rem;
 	}

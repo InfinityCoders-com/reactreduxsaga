@@ -29,6 +29,7 @@ const DATA = [
   {'path': '/holidays', 'label': 'Holidays'},
   {'path': '/inventory_system', 'label': 'Inventory'},
   {'path': '/team_view', 'label': 'Team'},
+  {'path': '/search', 'label': 'Search'},
   {'path': '/logout', 'label': 'Logout'}
 ];
 

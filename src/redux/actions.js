@@ -96,3 +96,7 @@ export const errorEmployeePerformance = createAction(constants.ERROR_EMP_PERFORM
 export const requestUserList = createAction(constants.REQUEST_USER_LIST);
 export const successUserList = createAction(constants.SUCCESS_USER_LIST);
 export const errorUserList = createAction(constants.ERROR_USER_LIST);
+
+export const requestAllSearchResult = createAction(constants.REQUEST_ALL_SEARCH_RESULT);
+export const successAllSearchResult = createAction(constants.SUCCESS_ALL_SEARCH_RESULT);
+export const errorAllSearchResult = createAction(constants.ERROR_ALL_SEARCH_RESULT);

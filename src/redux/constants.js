@@ -105,6 +105,11 @@ export const REQUEST_USER_LIST = 'REQUEST_USER_LIST';
 export const SUCCESS_USER_LIST = 'SUCCESS_USER_LIST';
 export const ERROR_USER_LIST = 'ERROR_USER_LIST';
 
+// Search
+export const REQUEST_ALL_SEARCH_RESULT = 'REQUEST_ALL_SEARCH_RESULT';
+export const SUCCESS_ALL_SEARCH_RESULT = 'SUCCESS_ALL_SEARCH_RESULT';
+export const ERROR_ALL_SEARCH_RESULT = 'ERROR_ALL_SEARCH_RESULT';
+
 //* **********************************************************************************
 // +++""ADMIN""+++
 
