@@ -1,21 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter, Link} from 'react-router';
-import _ from 'lodash';
-import Menu from 'components/generic/Menu';
 import {bindActionCreators} from 'redux';
-import {isNotUserValid} from 'src/services/generic';
 import LoadingIcon from 'components/generic/LoadingIcon';
 import * as actions from 'appRedux/actions';
-import Header from 'components/generic/Header';
-import GetLogo from 'components/auth/login/GetLogo';
-import UsersListHeader from 'components/generic/UsersListHeader';
 import PageUserDashboard from 'modules/manageUsers/components/PageUserDashboard';
 import PageMonthlyHours from 'modules/manageUsers/components/PageMonthlyHours';
 import PageEmployeePerformance from 'modules/manageUsers/components/PageEmployeePerformance';
 import PageEmployeeLifeCycle from 'modules/manageUsers/components/PageEmployeeLifeCycle';
-import PageEmpHours from 'modules/manageUsers/components/PageEmpHours';
-import * as actionsManageUserPendingHours from 'appRedux/workingHours/actions/manageUserPendingHour';
 
 class ManageDashboard extends React.Component {
   constructor (props) {
@@ -174,11 +166,16 @@ class ManageDashboard extends React.Component {
           <div className="nav-dashboard box-shadow m-b p-y-sm">
             <div className="navbar">
               <img className="p-0" style={{'marginTop': '0.7%'}} src="./logo.png" height="40" width="220"></img>
+              <Link to="search">
+                <p className='p-dashboard' data-toggle="tooltip" data-placement="bottom" title="Search">
+                  <span className="glyphicon glyphicon-search"></span>
+                </p>
+              </Link>
               <Link to="page_login">
                 <p className='p-dashboard'
                   data-toggle="tooltip"
                   data-placement="bottom"
-                title="Login">
+                  title="Login">
                   <i className="material-icons">power_settings_new</i>
                 </p>
               </Link>
@@ -189,69 +186,23 @@ class ManageDashboard extends React.Component {
               <LoadingIcon loading={this.props.teamStats.isLoading} />
             </div>
             <div className="p-a-lg">
-              {/* <div className="dker p-x">
-                <div className="row">
-                  <div className="col-sm-12 pull-sm-12">
-                <div className="p-y-md clearfix nav-active-primary">
-                <ul className="nav nav-pills nav-sm" style={{marginLeft: '4%'}}>
-                {this.state.role==='admin'?
-                <li onClick={() => { this.openPage('team_list'); }} className={`nav-item ${this.state.active}`}>
-                <a className="nav-link" href="" data-toggle="tab" data-target="#tab_1" aria-expanded="true">Team Dashboard</a>
-                <div className={this.state.firstArrow}>
-                <span className="arrow bottom b-accent"></span>
-                </div>
-                </li>:null}
-                <li onClick={() => { this.openPage('employee_performance'); }} className={`nav-item ${this.state.active}`}>
-                <a className="nav-link" href="" data-toggle="tab" data-target="#tab_5" aria-expanded="false">Employee Monthly Performance</a>
-                <div className={this.state.fifthArrow}>
-                <span className="arrow bottom b-accent"></span>
-                </div>
-                </li>
-
-                <li onClick={() => { this.openPage('emp_life_cycle'); }} className={'nav-item'}>
-                <a className="nav-link" href="" data-toggle="tab" data-target="#tab_2" aria-expanded="false">Employee Life Cycle</a>
-                <div className={this.state.secondArrow}>
-                <span className="arrow bottom b-accent"></span>
-                </div>
-                </li>
-
-                <li onClick={() => { this.openPage('attendance_list'); }} className={'nav-item'}>
-                <a className="nav-link" href="" data-toggle="tab" data-target="#tab_3" aria-expanded="false">Employee TimeTable</a>
-                <div className={this.state.thirdArrow}>
-                <span className="arrow bottom b-accent"></span>
-                </div>
-                </li>
-                <li onClick={() => { this.openPage('monthlyHours'); }} className={'nav-item'}>
-                <a className="nav-link" href="" data-toggle="tab" data-target="#tab_4" aria-expanded="false">Employee Monthly Hours</a>
-                <div className={this.state.fourthArrow}>
-                <span className="arrow bottom b-accent"></span>
-                </div>
-                </li>
-
-                </ul>
-                </div>
-                  </div>
-                  <div className="col-md-offset-10" style={{marginTop: '2%'}}>
-                  </div>
-                </div>
-              </div> */}
               <div className="row">
-                {this.state.role === 'admin'?
+                {this.state.role === 'admin' ?
                   <div className="col-xs-12 well box-shadow-deep p-a box">
                     <PageUserDashboard {...this.props} team={this.props.teamStats.teamStats.data.teams} />
                   </div>
-                :null}
+                : null}
                 <div className="col-xs-12 well box-shadow-deep p-a box">
                   <PageEmployeePerformance employeePerformance={this.props.employeePerformance} {...this.props} currentMonth={this.state.currentMonth} currentYear={this.state.currentYear} year={this.state.years} months={this.state.months} currentDate={this.state.date} />
                 </div>
                 <div className="col-xs-12 well box-shadow-deep p-a box">
                   <PageMonthlyHours monthlyHours={this.props.monthlyHours} {...this.props} currentMonth={this.state.currentMonth} currentYear={this.state.currentYear} year={this.state.years} months={this.state.months} />
                 </div>
-                {this.state.role === 'admin'?
+                {this.state.role === 'admin' ?
                   <div className="col-xs-12 well box-shadow-deep p-a box">
                     <PageEmployeeLifeCycle empLifeCycle={this.props.empLifeCycle} {...this.props} currentMonth={this.state.currentMonth} currentYear={this.state.currentYear} year={this.state.years} months={this.state.months} />
                   </div>
-                :null}
+                : null}
               </div>
             </div>
           </div>

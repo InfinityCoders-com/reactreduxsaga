@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const InputText = ({ className, ref, placeHolder, onchange, id, name, value, style }) => {
-  let classname = 'form-control ' + className;
+const InputText = ({className, placeHolder, onchange, id, name, value, style}) => {
+  let classname = className + ' form-control';
   return (
     <input
       type="text"
       className={classname}
-      ref={ref}
       placeholder={placeHolder}
       onChange={onchange}
       id={id} required
@@ -21,11 +20,11 @@ const InputText = ({ className, ref, placeHolder, onchange, id, name, value, sty
 export default InputText;
 
 InputText.PropTypes = {
-  className: PropTypes.string,
+  className:   PropTypes.string,
   placeHolder: PropTypes.string.isRequired,
-  onchange: PropTypes.func.isRequired,
-  id: PropTypes.number,
-  name: PropTypes.string,
-  value: PropTypes.string,
-  style: PropTypes.string
+  onchange:    PropTypes.func.isRequired,
+  id:          PropTypes.number,
+  name:        PropTypes.string,
+  value:       PropTypes.string,
+  style:       PropTypes.string
 };
