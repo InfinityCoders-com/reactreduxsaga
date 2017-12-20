@@ -21,7 +21,7 @@ const Result = ({data}) => {
               <h5 className="col-sm-3 p-t-sm">{value.type}</h5>
             </div>
             <Link to={value.link}>{value.link}</Link>
-            <p>{value.description}</p>
+            <p>{value.date + ' - ' + value.description}</p>
           </div>
         ))}
       </div>
