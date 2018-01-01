@@ -17,3 +17,20 @@ export function* getAllSearchResult (action) {
     console.warn('Some error found in "get_all_search_result" Request action\n', e);
   }
 }
+
+export function* addSubmitNewIssue (action) {
+  try {
+    const response = yield call(fireAjax, 'POST', '', {
+      'action': 'add_new_search_issue',
+      'data':   action.payload
+    });
+    if (response.error === 0) {
+      yield put(actions.successAddNewIssue(response.data));
+    } else {
+      yield put(actions.errorAddNewIssue(response.message));
+    }
+  } catch (e) {
+    yield put(actions.errorAddNewIssue('Error Occurs !!'));
+    console.warn('Some error found in "add_new_search_issue" Request action\n', e);
+  }
+}

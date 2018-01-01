@@ -110,6 +110,10 @@ export const REQUEST_ALL_SEARCH_RESULT = 'REQUEST_ALL_SEARCH_RESULT';
 export const SUCCESS_ALL_SEARCH_RESULT = 'SUCCESS_ALL_SEARCH_RESULT';
 export const ERROR_ALL_SEARCH_RESULT = 'ERROR_ALL_SEARCH_RESULT';
 
+export const REQUEST_ADD_NEW_ISSUE = 'REQUEST_ADD_NEW_ISSUE';
+export const SUCCESS_ADD_NEW_ISSUE = 'SUCCESS_ADD_NEW_ISSUE';
+export const ERROR_ADD_NEW_ISSUE = 'ERROR_ADD_NEW_ISSUE';
+
 //* **********************************************************************************
 // +++""ADMIN""+++
 

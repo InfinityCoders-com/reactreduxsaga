@@ -100,3 +100,7 @@ export const errorUserList = createAction(constants.ERROR_USER_LIST);
 export const requestAllSearchResult = createAction(constants.REQUEST_ALL_SEARCH_RESULT);
 export const successAllSearchResult = createAction(constants.SUCCESS_ALL_SEARCH_RESULT);
 export const errorAllSearchResult = createAction(constants.ERROR_ALL_SEARCH_RESULT);
+
+export const requestAddNewIssue = createAction(constants.REQUEST_ADD_NEW_ISSUE);
+export const successAddNewIssue = createAction(constants.SUCCESS_ADD_NEW_ISSUE);
+export const errorAddNewIssue = createAction(constants.ERROR_ADD_NEW_ISSUE);

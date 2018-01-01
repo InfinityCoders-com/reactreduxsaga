@@ -19,6 +19,7 @@ class Search extends React.Component {
       selectedAuthor:     '',
       selectedDate:       '',
       selectedSearchType: '',
+      searchWithin:       false,
       newHeading:         '',
       newAuthor:          '',
       newType:            '',
@@ -27,6 +28,7 @@ class Search extends React.Component {
       newDescription:     ''
     };
     this.onInputchange = this.onInputchange.bind(this);
+    this.resetAll = this.resetAll.bind(this);
     this.onAuthorchange = this.onAuthorchange.bind(this);
     this.onDatechange = this.onDatechange.bind(this);
     this.onSearchTypechange = this.onSearchTypechange.bind(this);
@@ -36,6 +38,7 @@ class Search extends React.Component {
     this.dateChange = this.dateChange.bind(this);
     this.linkChange = this.linkChange.bind(this);
     this.descriptionChange = this.descriptionChange.bind(this);
+    this.submitNewIssue = this.submitNewIssue.bind(this);
   }
   componentWillMount () {
     this.props.requestAllSearchResult();
@@ -43,24 +46,30 @@ class Search extends React.Component {
   componentWillReceiveProps (props) {
     this.setState({data: props.search.data});
   }
+  filteredData () {
+    return this.state.searchWithin ? this.state.data : this.props.search.data;
+  }
   onInputchange (e) {
     const {selectedAuthor, selectedDate, selectedSearchType} = this.state;
-    const data = searchAlgo(e.target.value, selectedAuthor, selectedDate, selectedSearchType, this.props.search.data);
+    const data = searchAlgo(e.target.value, selectedAuthor, selectedDate, selectedSearchType, this.filteredData());
     this.setState({searchString: e.target.value, data: data});
+  }
+  resetAll () {
+    this.setState({searchString: '', selectedAuthor: '', selectedDate: '', selectedSearchType: '', data: this.state.data});
   }
   onAuthorchange (e) {
     const {searchString, selectedDate, selectedSearchType} = this.state;
-    const data = searchAlgo(searchString, e.target.value, selectedDate, selectedSearchType, this.props.search.data);
+    const data = searchAlgo(searchString, e.target.value, selectedDate, selectedSearchType, this.filteredData());
     this.setState({selectedAuthor: e.target.value, data: data});
   }
   onDatechange (e) {
     const {searchString, selectedAuthor, selectedSearchType} = this.state;
-    const data = searchAlgo(searchString, selectedAuthor, e.target.value, selectedSearchType, this.props.search.data);
+    const data = searchAlgo(searchString, selectedAuthor, e.target.value, selectedSearchType, this.filteredData());
     this.setState({selectedDate: e.target.value, data: data});
   }
   onSearchTypechange (e) {
     const {searchString, selectedAuthor, selectedDate} = this.state;
-    const data = searchAlgo(searchString, selectedAuthor, selectedDate, e.target.value, this.props.search.data);
+    const data = searchAlgo(searchString, selectedAuthor, selectedDate, e.target.value, this.filteredData());
     this.setState({selectedSearchType: e.target.value, data: data});
   }
   headingChange (e) {
@@ -81,6 +90,18 @@ class Search extends React.Component {
   descriptionChange (e) {
     this.setState({newDescription: e.target.value});
   }
+  submitNewIssue (e) {
+    const {newHeading, newAuthor, newType, newDate, newLink, newDescription} = this.state;
+    const data = {
+      heading:     newHeading,
+      author:      newAuthor,
+      type:        newType,
+      date:        newDate,
+      link:        newLink,
+      description: newDescription
+    };
+    this.props.requestAddNewIssue(data);
+  }
   render () {
     let {isLoading, isSuccess, data} = this.props.search;
     let author = [];
@@ -91,7 +112,7 @@ class Search extends React.Component {
       date = data.map(item => item.date).filter((value, index, self) => self.indexOf(value) === index);
       type = data.map(item => item.type).filter((value, index, self) => self.indexOf(value) === index);
     }
-    console.log(this.state, '=======================')
+
     return (
       <div id="content" className="app-content box-shadow-z0" role="main">
         <Header pageTitle={'Search Issues'} showLoading={isLoading} />
@@ -106,6 +127,7 @@ class Search extends React.Component {
                   <div className="col-sm-7">
                     <SearchEngine
                       onInputchange={(e) => this.onInputchange(e)}
+                      resetAll={(e) => this.resetAll(e)}
                       onAuthorchange={(e) => this.onAuthorchange(e)}
                       onDatechange={(e) => this.onDatechange(e)}
                       onSearchTypechange={(e) => this.onSearchTypechange(e)}
@@ -115,7 +137,7 @@ class Search extends React.Component {
                     />
                   </div>
                   <div className="col-sm-2 col-md-3">
-                    <SideNav />
+                    <SideNav searchWithin={(e) => this.setState({searchWithin: e.target.checked})} searchWithinValue={this.state.searchWithin} />
                   </div>
                 </div>
                 <div className="row">
@@ -127,6 +149,7 @@ class Search extends React.Component {
                       dateChange={(e) => this.dateChange(e)}
                       linkChange={(e) => this.linkChange(e)}
                       descriptionChange={(e) => this.descriptionChange(e)}
+                      submitNewIssue={(e) => this.submitNewIssue(e)}
                     />
                   </div>
                   <div className="col-sm-7">

@@ -14,8 +14,6 @@ const actionsForOtherAPIurl = ['get_user_profile_detail', 'get_user_profile_deta
 
 const actionsForAPIurl = ['admin_user_apply_leave', 'change_employee_status', 'get_employee_life_cycle', 'update_employee_life_cycle', 'show_disabled_users', 'add_roles', 'list_all_roles', 'update_role', 'assign_user_role', 'delete_role', 'get_employee_monthly_hours', 'get_employee_performance'];
 
-const actionForExpressWeburl = ['update_time_by_employee', 'manual', 'approval'];
-
 export function fireAjax (method, url, data, api) {
   let URL = CONFIG.api_url + url;
   let action = data.action;
@@ -83,6 +81,10 @@ export function fireAjax (method, url, data, api) {
     headers.body = JSON.stringify(data);
     URL = CONFIG.expressApiUrl;
   } else if (data.action === 'get_all_search_result') {
+    delete (data.action);
+    headers.body = JSON.stringify(data);
+    URL = CONFIG.other;
+  } else if (data.action === 'add_new_search_issue') {
     delete (data.action);
     headers.body = JSON.stringify(data);
     URL = CONFIG.other;

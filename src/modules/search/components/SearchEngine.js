@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import InputText from 'components/generic/input/InputText';
 import {Button} from 'components/generic/buttons';
 
-const SearchEngine = ({onInputchange, onAuthorchange, onDatechange, onSearchTypechange, author, date, type}) => {
+const SearchEngine = ({onInputchange, resetAll, onAuthorchange, onDatechange, onSearchTypechange, author, date, type}) => {
   return (
     <div className="well">
       <div className="searchInput">
         <InputText name="searchString" onchange={onInputchange} placeHolder="Search for issues" className='col-sm-8' style={{'position': 'relative', 'float': 'left'}} />
       </div>
-      <Button className='inline-button' type="submit" label="Search" />
+      {/* <Button className='inline-button' type="submit" label="Search" /> */}
+      <Button className='inline-button' type="reset" label="Reset" onChange={resetAll} />
       <div className="filters">
         <select name='author' onChange={onAuthorchange}>
           <option value=''>-- Please Select --</option>
