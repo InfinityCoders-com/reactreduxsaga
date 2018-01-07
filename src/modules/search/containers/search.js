@@ -100,6 +100,16 @@ class Search extends React.Component {
       link:        newLink,
       description: newDescription
     };
+    // const data = this.props.search;
+    // data.data.push({
+    //   heading:     newHeading,
+    //   author:      newAuthor,
+    //   type:        newType,
+    //   date:        newDate,
+    //   link:        newLink,
+    //   description: newDescription
+    // });
+    // console.log(this.props.search.data, data, '===================');
     this.props.requestAddNewIssue(data);
   }
   render () {

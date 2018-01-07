@@ -26,6 +26,7 @@ export function fireAjax (method, url, data, api) {
     mode:   'cors',
     cache:  'no-cache',
     Accept: 'application/json',
+    'Content-Type': 'text/plain;charset=UTF-8',
     body:   JSON.stringify(data)
   };
 
@@ -81,11 +82,9 @@ export function fireAjax (method, url, data, api) {
     headers.body = JSON.stringify(data);
     URL = CONFIG.expressApiUrl;
   } else if (data.action === 'get_all_search_result') {
-    delete (data.action);
     headers.body = JSON.stringify(data);
     URL = CONFIG.other;
   } else if (data.action === 'add_new_search_issue') {
-    delete (data.action);
     headers.body = JSON.stringify(data);
     URL = CONFIG.other;
   }
