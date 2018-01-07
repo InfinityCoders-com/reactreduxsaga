@@ -7,9 +7,7 @@ const SideNav = ({searchWithin, searchWithinValue}) => {
     <div className="well">
       <h3> Advanced Search </h3>
       <ul className='sideNav'>
-        <li><Checkbox onchange={searchWithin} value={searchWithinValue} /> Search Within Results</li>
-        <li>B</li>
-        <li>C</li>
+        <li><Checkbox onchange={searchWithin} value={searchWithinValue} label='Search Within Results' /></li>
       </ul>
     </div>
   );

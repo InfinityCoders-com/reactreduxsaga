@@ -6,16 +6,20 @@ $darkenColor: darken($activeColor, 20%);
 section.checkbox{
   // width:100px;
   // height:100px;
-  background: #555;
+  // background: #555;
   display:inline-block;
   position: relative;
   text-align: center;
   margin-top:5px;
   // border: 1px solid gray;
   border-radius: 5px;
-  box-shadow:
-    0 1px 4px rgba(0, 0, 0, 0.3),
-    0 0 40px rgba(0, 0, 0, 0.1) inset;
+  // box-shadow:
+    // 0 1px 4px rgba(0, 0, 0, 0.3),
+    // 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  span{
+    padding-left: 15px;
+    line-height: 2;
+  }
   &:after{
 /*         visibility: hidden; */
     content:attr(title);
@@ -34,6 +38,7 @@ section.checkbox{
   width: 24px;
   height: 24px;
   position: relative;
+  float: left;
   // margin: 20px auto;
   background: #fcfff4;
   background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);

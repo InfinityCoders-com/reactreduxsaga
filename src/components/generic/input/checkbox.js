@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Checkbox = ({className, placeHolder, onchange, id, name, value, style}) => {
+const Checkbox = ({className, placeHolder, onchange, id, name, value, style, label}) => {
   const classname = className ? className + ' checkbox' : 'checkbox';
   return (
     <section className='checkbox'>
@@ -9,6 +9,7 @@ const Checkbox = ({className, placeHolder, onchange, id, name, value, style}) =>
         <input type="checkbox" className={classname} onChange={onchange} value={value} id="squaredOne" style={style} name={name} checked={value} required />
         <label htmlFor="squaredOne"></label>
       </div>
+      <span>{label}</span>
     </section>
   );
 };
@@ -22,5 +23,6 @@ Checkbox.PropTypes = {
   id:          PropTypes.number,
   name:        PropTypes.string,
   value:       PropTypes.string,
-  style:       PropTypes.string
+  style:       PropTypes.string,
+  label:       PropTypes.string
 };
